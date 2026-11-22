@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axpart Home | বিশ্বস্ত রিয়েল এস্টেট সল্যুশন</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f4f6f9; color: #222; line-height: 1.6; }
+        header { background: #0f2942; color: #fff; padding: 25px 20px; text-align: center; border-bottom: 4px solid #d4af37; }
+        header h1 { font-size: 28px; letter-spacing: 0.5px; }
+        header p { font-size: 15px; color: #dbe4ee; margin-top: 5px; }
+        .container { max-width: 1100px; margin: 25px auto; padding: 0 15px; }
+        .filter-bar { display: flex; justify-content: center; gap: 10px; margin-bottom: 25px; flex-wrap: wrap; }
+        .filter-btn { padding: 8px 18px; border: 1px solid #0f2942; background: #fff; color: #0f2942; border-radius: 20px; cursor: pointer; font-weight: 600; transition: 0.2s; }
+        .filter-btn.active, .filter-btn:hover { background: #0f2942; color: #fff; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s; }
+        .card:hover { transform: translateY(-4px); }
+        .card img { width: 100%; height: 210px; object-fit: cover; background: #ddd; }
+        .card-body { padding: 18px; }
+        .badge { display: inline-block; background: #e6f0fa; color: #0f2942; padding: 3px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; margin-bottom: 8px; }
+        .badge.land { background: #fef5e7; color: #b9770e; }
+        .card h3 { font-size: 19px; margin-bottom: 6px; color: #111; }
+        .location { font-size: 14px; color: #555; margin-bottom: 10px; }
+        .specs { font-size: 14px; background: #f8f9fa; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; color: #333; }
+        .price { font-size: 18px; font-weight: bold; color: #0f2942; margin-bottom: 15px; }
+        .wa-btn { display: block; text-align: center; background: #25D366; color: #fff; text-decoration: none; padding: 10px; border-radius: 6px; font-weight: bold; font-size: 15px; }
+        .wa-btn:hover { background: #1ebe5d; }
+        footer { text-align: center; padding: 20px; background: #0f2942; color: #ccc; margin-top: 40px; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Axpart Home</h1>
+    <p>ঢাকায় বিশ্বস্ত ফ্ল্যাট, বাড়ি ও জমি ক্রয়-বিক্রয় কনসালট্যান্সি</p>
+</header>
+
+<div class="container">
+    <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterItems('all', this)">সব প্রপার্টি</button>
+        <button class="filter-btn" onclick="filterItems('flat', this)">রেডি ফ্ল্যাট</button>
+        <button class="filter-btn" onclick="filterItems('land', this)">জমি / প্লট</button>
+    </div>
+
+    <div class="grid" id="propertyGrid">
+        <!-- প্রপার্টি ১ (ফ্ল্যাট) -->
+        <div class="card" data-type="flat">
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Flat">
+            <div class="card-body">
+                <span class="badge">রেডি ফ্ল্যাট</span>
+                <h3>১,৪৫০ বর্গফুট আধুনিক অ্যাপার্টমেন্ট</h3>
+                <div class="location">📍 মালিবাগ, ঢাকা</div>
+                <div class="specs">🛏️ ৩ বেড | 🛁 ৩ বাথ | 🛗 লিফট ও পার্কিং সুবিধা</div>
+                <div class="price">মূল্য: ১ কোটি ১৫ লক্ষ টাকা</div>
+                <a class="wa-btn" href="https://wa.me/8801700000000?text=আসসালামু%20আলাইকুম,%20মালিবাগের%20১৪৫০%20বর্গফুটের%20ফ্ল্যাটটি%20সম্পর্কে%20জানতে%20চাই।" target="_blank">WhatsApp-এ যোগাযোগ করুন</a>
+            </div>
+        </div>
+
+        <!-- প্রপার্টি ২ (জমি) -->
+        <div class="card" data-type="land">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80" alt="Land">
+            <div class="card-body">
+                <span class="badge land">জমি / প্লট</span>
+                <h3>৫ কাঠা নিষ্কণ্টক আবাসিক প্লট</h3>
+                <div class="location">📍 আফতাবনগর, ব্লক-ই, ঢাকা</div>
+                <div class="specs">📐 ৫ কাঠা | 🛣️ ৩০ ফিট প্রশস্ত রাস্তা | 📄 কাগজপত্র ১০০% আপডেট</div>
+                <div class="price">মূল্য: প্রতি কাঠা ৮৫ লক্ষ টাকা</div>
+                <a class="wa-btn" href="https://wa.me/8801700000000?text=আসসালামু%20আলাইকুম,%20আফতাবনগরের%20৫%20কাঠা%20জমিটি%20সম্পর্কে%20জানতে%20চাই।" target="_blank">WhatsApp-এ যোগাযোগ করুন</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>© ২০২৬ Axpart Home | যোগাযোগ: +880 1700-000000</p>
+</footer>
+
+<script>
+    function filterItems(type, btn) {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.display = (type === 'all' || card.dataset.type === type) ? 'block' : 'none';
+        });
+    }
+</script>
+
+</body>
+</html>
